@@ -18,6 +18,7 @@ Remove empty levels from all the factor columns of a data.table object
 \examples{
 library(data.table)
 inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+asFactorDT(inputDT, c('y'))
 levels(inputDT$y)
 removeEmptyLevelsDT(inputDT)
 levels(inputDT$y)

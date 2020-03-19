@@ -20,12 +20,14 @@ Extracting the levels of all or a selected set of the factor columns of a data.t
 \examples{
 library(data.table)
 inputDT <- as.data.table(data.frame(x = LETTERS[11:20], y = LETTERS[1:10]))
+asFactorDT(inputDT, c('x', 'y'))
 
 extractLevelDT(inputDT)
 extractLevelDT(inputDT, c('x', 'y'))
 \donttest{extractLevelDT(inputDT, c('x', 'y1'))}
 
 inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+asFactorDT(inputDT, c('y'))
 extractLevelDT(inputDT)
 
 inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = seq(2, 21, 2)))

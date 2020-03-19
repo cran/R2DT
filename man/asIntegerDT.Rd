@@ -20,6 +20,7 @@ Forcing the integer data type on a selected set of columns of a data.table objec
 \examples{
 library(data.table)
 inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+asFactorDT(inputDT, c('y'))
 
 \donttest{asIntegerDT(inputDT)}
 asIntegerDT(inputDT, c('x', 'y'))

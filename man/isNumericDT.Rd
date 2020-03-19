@@ -22,6 +22,7 @@ Testing if a set of columns of a data.table object corresponds to the numeric da
 \examples{
 library(data.table)
 inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+asFactorDT(inputDT, c('y'))
 
 isNumericDT(inputDT)
 isNumericDT(inputDT, c('x', 'y'))

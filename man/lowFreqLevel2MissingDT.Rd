@@ -20,12 +20,14 @@ Transform levels of all the factor columns of a data.table object to missing if 
 \examples{
 library(data.table)
 inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+asFactorDT(inputDT, c('y'))
 levels(inputDT$y)
 lowFreqLevel2MissingDT(inputDT, 2)
 levels(inputDT$y)
 
 inputDT <- as.data.table(data.frame(x = seq(1, 40, 2),
 y = c(LETTERS[1:10], LETTERS[1:10])))
+asFactorDT(inputDT, c('y'))
 levels(inputDT$y)
 lowFreqLevel2MissingDT(inputDT, 1)
 levels(inputDT$y)

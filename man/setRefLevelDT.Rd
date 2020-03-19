@@ -22,6 +22,7 @@ Setting the reference level of all or a selected set of the factor columns of a 
 \examples{
 library(data.table)
 inputDT <- as.data.table(data.frame(x = LETTERS[11:20], y = LETTERS[1:10]))
+asFactorDT(inputDT, c('x', 'y'))
 
 \donttest{setRefLevelDT(inputDT)}
 
@@ -34,6 +35,7 @@ levels(inputDT$y)[1]
 \donttest{setRefLevelDT(inputDT, c('x', 'y'), c('bla', 'bla'))}
 
 inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+asFactorDT(inputDT, c('y'))
 levels(inputDT$y)[1]
 setRefLevelDT(inputDT, 'y', 'E')
 levels(inputDT$y)[1]

@@ -20,6 +20,7 @@ Checking if an object is a data.table object and (optional) testing if some colu
 \examples{
 library(data.table)
 inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+asFactorDT(inputDT, c('y'))
 
 checkDT(inputDT)
 checkDT(inputDT, c('x', 'y'))

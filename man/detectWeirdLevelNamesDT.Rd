@@ -21,9 +21,11 @@ inputDT <- as.data.table(data.frame(x = seq(1, 20, 2)))
 detectWeirdLevelNamesDT(inputDT)
 
 inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+asFactorDT(inputDT, c('y'))
 detectWeirdLevelNamesDT(inputDT)
 
 inputDT <- as.data.table(data.frame(x = c(rep('test_', 5), rep('test@', 5)),
 y = c(rep('test_', 5), rep('test@', 5))))
+asFactorDT(inputDT, c('x', 'y'))
 \donttest{detectWeirdLevelNamesDT(inputDT)}
 }

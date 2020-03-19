@@ -20,6 +20,7 @@ Forcing the character/string data type on a selected set of columns of a data.ta
 \examples{
 library(data.table)
 inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+asFactorDT(inputDT, c('y'))
 
 \donttest{asCharacterDT(inputDT)}
 asCharacterDT(inputDT, c('x', 'y'))

@@ -22,6 +22,7 @@ Testing if a set of columns of a data.table object corresponds to the character/
 \examples{
 library(data.table)
 inputDT <- as.data.table(data.frame(x = rep(c(TRUE, FALSE), 5), y = LETTERS[1:10]))
+asFactorDT(inputDT, c('y'))
 
 isCharacterDT(inputDT)
 

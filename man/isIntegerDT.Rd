@@ -22,6 +22,7 @@ Testing if a set of columns of a data.table object corresponds to the integer da
 \examples{
 library(data.table)
 inputDT <- as.data.table(data.frame(x = seq(1L, 20L, 2L), y = LETTERS[1:10]))
+asFactorDT(inputDT, c('y'))
 
 isIntegerDT(inputDT)
 isIntegerDT(inputDT, c('x', 'y'))

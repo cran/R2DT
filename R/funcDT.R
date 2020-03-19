@@ -44,6 +44,7 @@ finishArgCheck <- function(argcheck){
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #'
 #' checkDT(inputDT)
 #' checkDT(inputDT, c('x', 'y'))
@@ -80,6 +81,7 @@ checkDT <- function(inputDT, colNamesToBeChecked = NULL){
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #'
 #' isFactorDT(inputDT)
 #' isFactorDT(inputDT, c('x', 'y'))
@@ -125,6 +127,7 @@ isFactorDT <- function(inputDT, colNamesToBeChecked = NULL, returnNames = FALSE)
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #'
 #' isNumericDT(inputDT)
 #' isNumericDT(inputDT, c('x', 'y'))
@@ -168,6 +171,7 @@ isNumericDT <- function(inputDT, colNamesToBeChecked = NULL, returnNames = FALSE
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = seq(1L, 20L, 2L), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #'
 #' isIntegerDT(inputDT)
 #' isIntegerDT(inputDT, c('x', 'y'))
@@ -211,6 +215,7 @@ isIntegerDT <- function(inputDT, colNamesToBeChecked = NULL, returnNames = FALSE
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = rep(c(TRUE, FALSE), 5), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #'
 #' isLogicalDT(inputDT)
 #' isLogicalDT(inputDT, c('x', 'y'))
@@ -254,6 +259,7 @@ isLogicalDT <- function(inputDT, colNamesToBeChecked = NULL, returnNames = FALSE
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = rep(c(TRUE, FALSE), 5), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #'
 #' isCharacterDT(inputDT)
 #'
@@ -297,6 +303,7 @@ isCharacterDT <- function(inputDT, colNamesToBeChecked = NULL, returnNames = FAL
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #'
 #' \donttest{asCharacterDT(inputDT)}
 #' asCharacterDT(inputDT, c('x', 'y'))
@@ -357,6 +364,7 @@ asNumericDT <- function(inputDT, colNamesToBeTransformed = NULL){
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #'
 #' \donttest{asIntegerDT(inputDT)}
 #' asIntegerDT(inputDT, c('x', 'y'))
@@ -389,6 +397,7 @@ asIntegerDT <- function(inputDT, colNamesToBeTransformed = NULL){
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #'
 #' \donttest{asLogicalDT(inputDT)}
 #' asLogicalDT(inputDT, c('x', 'y'))
@@ -421,6 +430,7 @@ asLogicalDT <- function(inputDT, colNamesToBeTransformed = NULL){
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #'
 #' \donttest{asCharacterDT(inputDT)}
 #' asCharacterDT(inputDT, c('x', 'y'))
@@ -453,10 +463,12 @@ asCharacterDT <- function(inputDT, colNamesToBeTransformed = NULL){
 #' detectWeirdLevelNamesDT(inputDT)
 #'
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #' detectWeirdLevelNamesDT(inputDT)
 #'
 #' inputDT <- as.data.table(data.frame(x = c(rep('test_', 5), rep('test@', 5)),
 #' y = c(rep('test_', 5), rep('test@', 5))))
+#' asFactorDT(inputDT, c('x', 'y'))
 #' \donttest{detectWeirdLevelNamesDT(inputDT)}
 
 detectWeirdLevelNamesDT <- function(inputDT){
@@ -489,12 +501,14 @@ detectWeirdLevelNamesDT <- function(inputDT){
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = LETTERS[11:20], y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('x', 'y'))
 #'
 #' extractLevelDT(inputDT)
 #' extractLevelDT(inputDT, c('x', 'y'))
 #' \donttest{extractLevelDT(inputDT, c('x', 'y1'))}
 #'
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #' extractLevelDT(inputDT)
 #'
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = seq(2, 21, 2)))
@@ -538,12 +552,14 @@ extractLevelDT <- function(inputDT, categoricalVar = NULL){
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = LETTERS[11:20], y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('x', 'y'))
 #'
 #' extractRefLevelDT(inputDT)
 #' \donttest{extractRefLevelDT(inputDT, c('x', 'y'))
 #' extractRefLevelDT(inputDT, c('x', 'y1'))}
 #'
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #' extractRefLevelDT(inputDT)
 #'
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = seq(2, 21, 2)))
@@ -569,6 +585,7 @@ extractRefLevelDT <- function(inputDT, categoricalVar = NULL){
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = LETTERS[11:20], y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('x', 'y'))
 #'
 #' \donttest{setRefLevelDT(inputDT)}
 #'
@@ -581,6 +598,7 @@ extractRefLevelDT <- function(inputDT, categoricalVar = NULL){
 #' \donttest{setRefLevelDT(inputDT, c('x', 'y'), c('bla', 'bla'))}
 #'
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #' levels(inputDT$y)[1]
 #' setRefLevelDT(inputDT, 'y', 'E')
 #' levels(inputDT$y)[1]
@@ -623,6 +641,7 @@ isPresentCharVec <- function(inputVector, value2BeChecked){
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #' levels(inputDT$y)
 #' removeEmptyLevelsDT(inputDT)
 #' levels(inputDT$y)
@@ -655,12 +674,14 @@ removeEmptyLevelsDT <- function(inputDT){
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #' levels(inputDT$y)
 #' lowFreqLevel2MissingDT(inputDT, 2)
 #' levels(inputDT$y)
 #'
 #' inputDT <- as.data.table(data.frame(x = seq(1, 40, 2),
 #' y = c(LETTERS[1:10], LETTERS[1:10])))
+#' asFactorDT(inputDT, c('y'))
 #' levels(inputDT$y)
 #' lowFreqLevel2MissingDT(inputDT, 1)
 #' levels(inputDT$y)
@@ -699,6 +720,8 @@ lowFreqLevel2MissingDT <- function(inputDT, minNumberLevel = NULL){
 #' inputDT <- as.data.table(data.frame(x = seq(1, 20, 2), y = LETTERS[1:10], z = LETTERS[1:10]))
 #' inputDT2 <- as.data.table(data.frame(p = seq(1, 40, 2), x = c(LETTERS[1:10], LETTERS[1:10]),
 #' l = c(LETTERS[1:10], LETTERS[1:10]), m = c(LETTERS[1:10], LETTERS[1:10])))
+#' asFactorDT(inputDT, c('y', 'z'))
+#' asFactorDT(inputDT2, c('x', 'l', 'm))
 #'
 #' rbindDT(inputDT, inputDT2)
 
@@ -760,6 +783,7 @@ rbindDT <- function(topDT, bottomDT){
 #' @examples
 #' library(data.table)
 #' inputDT <- as.data.table(data.frame(x = 10:1, y = LETTERS[1:10]))
+#' asFactorDT(inputDT, c('y'))
 #' inputDT
 #' sortByRowIndexDT(inputDT, 10:1)
 #' inputDT

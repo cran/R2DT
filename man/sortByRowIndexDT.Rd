@@ -20,6 +20,7 @@ Order the rows of a data.table object by index
 \examples{
 library(data.table)
 inputDT <- as.data.table(data.frame(x = 10:1, y = LETTERS[1:10]))
+asFactorDT(inputDT, c('y'))
 inputDT
 sortByRowIndexDT(inputDT, 10:1)
 inputDT
